@@ -19,6 +19,7 @@ export class CursoDetalheComponent implements OnInit {
 
      console.log(this.route);
     // this.id = this.route.snapshot.params['id'];
+    //comentário novo
     
       
   }
