@@ -1,11 +1,11 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import { CursosComponent } from './app/cursos/cursos.component';
-import { LoginComponent } from './app/login/login.component';
-import { HomeComponent } from './app/home/home.component';
-import { CursoDetalheComponent } from './app/curso-detalhe/curso-detalhe.component';
-import { CursoNaoEncontradoComponent } from './app/curso-nao-encontrado/curso-nao-encontrado.component';
+import { CursosComponent } from './cursos/cursos.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
+import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 
 //Declarando quais são as minhas rotas e quais serão seus respectivos componentes que serão rederezados em cada rota
 const APP_ROUTES: Routes = [

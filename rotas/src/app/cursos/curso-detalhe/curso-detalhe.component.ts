@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router  } from '@angular/router';
 import { Subscription } from  'rxjs/Rx';
 
-import { CursosService } from '../cursos/cursos.service';
+import { CursosService } from '../cursos.service';
 
 @Component({
   selector: 'app-curso-detalhe',
@@ -12,16 +12,16 @@ import { CursosService } from '../cursos/cursos.service';
 export class CursoDetalheComponent implements OnInit {
 
   public id: number;
-  public inscricao: Subscription; 
+  public inscricao: Subscription;
   public curso: any;
 
-  constructor(private route: ActivatedRoute, private cursosService: CursosService, private router: Router) { 
+  constructor(private route: ActivatedRoute, private cursosService: CursosService, private router: Router) {
 
      console.log(this.route);
     // this.id = this.route.snapshot.params['id'];
     //comentário novo
-    
-      
+
+
   }
 
   ngOnInit() {
@@ -31,7 +31,7 @@ export class CursoDetalheComponent implements OnInit {
         this.curso = this.cursosService.getCurso(this.id)
 
         if(this.curso == null){
-          this.router.navigate(['/naoEncontrado']);            
+          this.router.navigate(['/naoEncontrado']);
 
         }
       }
