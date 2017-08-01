@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 
 //Declarando quais são as minhas rotas e quais serão seus respectivos componentes que serão rederezados em cada rota
 const appRoutes: Routes = [
+   {path:'alunos', loadChildren:'app/alunos/alunos.module#AlunosModule' },//Carregando o módulo por demanda
+   { path: 'cursos', loadChildren: 'app/cursos/cursos.module#CursosModule'}, //Lazy Loading
     //{ path: 'cursos', component: CursosComponent },
    // { path:'curso/:id', component: CursoDetalheComponent},
     { path: 'login', component: LoginComponent },
