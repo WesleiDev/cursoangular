@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MaterializeModule } from 'angular2-materialize';
@@ -10,8 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app.routing.module';
 //import { CursosModule } from './cursos/cursos.module';
 //import {AlunosModule} from './alunos/alunos.module';
-
-
+import { AuthService } from './login/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -27,11 +28,14 @@ import { AppRoutingModule } from './app.routing.module';
     MaterializeModule,
     //routing,
     AppRoutingModule,
+    FormsModule
     //CursosModule,
     //AlunosModule
   ],
   providers: [
     //CursosService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

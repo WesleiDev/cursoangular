@@ -9,7 +9,7 @@ import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-en
 //Declarando quais são as minhas rotas e quais serão seus respectivos componentes que serão rederezados em cada rota
 const cursosRoutes: Routes = [
     { path: '', component: CursosComponent },
-     { path: 'naoEncontrado', component: CursoNaoEncontradoComponent  },
+    { path: 'naoEncontrado', component: CursoNaoEncontradoComponent  },
     { path:':id', component: CursoDetalheComponent},
 ];
 

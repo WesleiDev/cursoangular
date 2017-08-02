@@ -1,3 +1,4 @@
+import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from '@angular/core';
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
@@ -10,12 +11,21 @@ import { HomeComponent } from './home/home.component';
 
 //Declarando quais são as minhas rotas e quais serão seus respectivos componentes que serão rederezados em cada rota
 const appRoutes: Routes = [
-   {path:'alunos', loadChildren:'app/alunos/alunos.module#AlunosModule' },//Carregando o módulo por demanda
-   { path: 'cursos', loadChildren: 'app/cursos/cursos.module#CursosModule'}, //Lazy Loading
+   {path:'alunos',
+    loadChildren:'app/alunos/alunos.module#AlunosModule',
+    canActivate: [AuthGuard]
+  },//Carregando o módulo por demanda
+   { path: 'cursos',
+     loadChildren: 'app/cursos/cursos.module#CursosModule',
+     canActivate: [AuthGuard]
+    }, //Lazy Loading
     //{ path: 'cursos', component: CursosComponent },
    // { path:'curso/:id', component: CursoDetalheComponent},
     { path: 'login', component: LoginComponent },
-    { path: '', component: HomeComponent  },
+    { path: '',
+      component: HomeComponent,
+      canActivate: [AuthGuard]
+      },
    // { path: 'naoEncontrado', component: CursoNaoEncontradoComponent  },
 ];
 
