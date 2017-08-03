@@ -1,3 +1,4 @@
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from '@angular/core';
 import {ModuleWithProviders} from '@angular/core';
@@ -16,21 +17,29 @@ const appRoutes: Routes = [
    {path:'alunos',
     loadChildren:'app/alunos/alunos.module#AlunosModule',
     canActivate: [AuthGuard],
-    canActivateChild: [AlunosGuard]
+    canActivateChild: [AlunosGuard],
+    canLoad :[AuthGuard]
 
   },//Carregando o módulo por demanda
    { path: 'cursos',
      loadChildren: 'app/cursos/cursos.module#CursosModule',
      canActivate: [AuthGuard],
-     canActivateChild :[CursosGuard]
+     canActivateChild :[CursosGuard],
+     canLoad :[AuthGuard]
     }, //Lazy Loading
     //{ path: 'cursos', component: CursosComponent },
    // { path:'curso/:id', component: CursoDetalheComponent},
     { path: 'login', component: LoginComponent },
-    { path: '',
+    { path: 'home',
       component: HomeComponent,
       canActivate: [AuthGuard]
       },
+    {
+      path: '', redirectTo: '/home', pathMatch:'full'
+    },
+    {
+      path: '**', component: PaginaNaoEncontradaComponent
+    }
    // { path: 'naoEncontrado', component: CursoNaoEncontradoComponent  },
 ];
 
