@@ -1,0 +1,6 @@
+**novo projeto -> ng new NOME_PROJETO
+**build do projeto -> ng server
+**criando component -> ng g c NOME_COMPONENTE
+**criar modulo -> ng g m cursos
+**criar um serviço -> ng g s NOME_SERVICE
+**Cria o App com o roteamento -> ng new NOME_APP --routing 
